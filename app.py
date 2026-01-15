@@ -177,7 +177,7 @@ def zertifikat():
 
     # Logo
     if os.path.exists(LOGO_CERT):
-        c.drawImage(LOGO_CERT, w / 2 - 150, h - 160, 300, 120)
+        c.drawImage(LOGO_CERT, w / 2 - 150, h - 160, 300, 150)
 
     # Hauptüberschrift
     c.setFont("Helvetica-Bold", 24)
