@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Abschlussquiz</h1>
+<p>Bitte beantworte alle Fragen. Zum Bestehen sind mindestens 80 % erforderlich.</p>
+
+<form method="post" novalidate>
+
+    <div class="box">
+        <p><strong>1. Sicherheit am Arbeitsplatz hat höchste Priorität.</strong></p>
+        <label>
+            <input type="radio" name="q1" value="richtig" required>
+            Richtig
+        </label><br>
+        <label>
+            <input type="radio" name="q1" value="falsch">
+            Falsch
+        </label>
+    </div>
+
+    <div class="box">
+        <p><strong>2. Sicherheit behindert den Arbeitserfolg.</strong></p>
+        <label>
+            <input type="radio" name="q2" value="richtig" required>
+            Richtig
+        </label><br>
+        <label>
+            <input type="radio" name="q2" value="falsch">
+            Falsch
+        </label>
+    </div>
+
+    <div class="box">
+        <p><strong>3. Flucht- und Rettungswege dürfen zugestellt werden.</strong></p>
+        <label>
+            <input type="radio" name="q3" value="richtig" required>
+            Richtig
+        </label><br>
+        <label>
+            <input type="radio" name="q3" value="falsch">
+            Falsch
+        </label>
+    </div>
+
+    <div class="box">
+        <p><strong>4. Jede Verletzung muss gemeldet werden.</strong></p>
+        <label>
+            <input type="radio" name="q4" value="richtig" required>
+            Richtig
+        </label><br>
+        <label>
+            <input type="radio" name="q4" value="falsch">
+            Falsch
+        </label>
+    </div>
+
+    <div class="box">
+        <p><strong>5. Ein Eintrag im Verbandbuch ist Pflicht.</strong></p>
+        <label>
+            <input type="radio" name="q5" value="richtig" required>
+            Richtig
+        </label><br>
+        <label>
+            <input type="radio" name="q5" value="falsch">
+            Falsch
+        </label>
+    </div>
+
+    <button type="submit" class="btn-primary">
+        Quiz abschließen
+    </button>
+
+</form>
+
+{% endblock %}

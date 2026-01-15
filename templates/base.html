@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>Sicherheitsunterweisung 2026</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0096A1;
+        }
+
+        .logo-area {
+            background: #0096A1;
+            text-align: center;
+            padding: 30px 0 20px 0;
+        }
+
+        .logo-area img {
+            width: 350px;
+            max-width: 90%;
+        }
+
+        .wrapper {
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            background: #FFFAEA;
+            border-radius: 10px;
+            padding: 40px;
+        }
+
+        h1, h2 {
+            color: #0096A1;
+        }
+
+        .box {
+            background: #FFFAEA;
+            padding: 20px;
+            border-left: 6px solid #0096A1;
+            margin: 25px 0;
+        }
+
+        .nav {
+            margin-top: 30px;
+            text-align: right;
+        }
+
+        .nav a, button {
+            background: #0096A1;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .nav a:hover,
+        button:hover {
+            opacity: 0.9;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #0096A1;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f7f7f7;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="logo-area">
+    <img src="/static/logo.png" alt="Landal Logo">
+</div>
+
+<div class="wrapper">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>

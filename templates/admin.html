@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Admin – Sicherheitsunterweisung</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #0096A1;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #FFFAEA;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+header .actions {
+    display: flex;
+    gap: 10px;
+}
+
+h2 {
+    margin: 0;
+}
+
+.btn {
+    background: #0096A1;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background: #666;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+th, td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background: #0096A1;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f3f3f3;
+}
+
+tr:hover {
+    background: #e6f6f7;
+}
+
+.status-ok {
+    color: green;
+    font-weight: bold;
+}
+
+.status-fail {
+    color: red;
+    font-weight: bold;
+}
+
+td a {
+    color: #0096A1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+    table {
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main class="wrapper">
+
+    <header>
+        <h2>Admin – Teilnehmerübersicht</h2>
+
+        <div class="actions">
+            <a href="/admin/export/excel" class="btn">
+                Excel exportieren
+            </a>
+            <a href="/admin/logout" class="btn btn-secondary">
+                Logout
+            </a>
+        </div>
+    </header>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Abteilung</th>
+                <th>Datum</th>
+                <th>Punkte</th>
+                <th>Ergebnis</th>
+                <th>Zertifikat</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for t in daten %}
+            <tr>
+                <td>{{ t.name }}</td>
+                <td>{{ t.abteilung }}</td>
+                <td>{{ t.datum }}</td>
+                <td>{{ t.punkte }} / {{ t.gesamt }}</td>
+                <td>
+                    {% if t.bestanden == 1 %}
+                        <span class="status-ok">Bestanden</span>
+                    {% else %}
+                        <span class="status-fail">Nicht bestanden</span>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if t.zertifikat %}
+                        <a href="/{{ t.zertifikat }}" target="_blank" rel="noopener">
+                            Download
+                        </a>
+                    {% else %}
+                        —
+                    {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6" style="text-align:center;">
+                    Keine Teilnehmer vorhanden
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</main>
+
+</body>
+</html>

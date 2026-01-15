@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Quiz nicht bestanden</h2>
+
+<div class="box">
+<p>
+Du hast {{ punkte }} von {{ gesamt }} Fragen richtig beantwortet.
+</p>
+
+<p>
+Für das Bestehen sind mindestens 80 % erforderlich.
+</p>
+
+<p>
+Bitte lies die Unterweisung erneut aufmerksam durch und versuche es noch einmal.
+</p>
+</div>
+
+<div class="nav">
+    <a href="/">Unterweisung neu starten</a>
+</div>
+
+{% endblock %}
